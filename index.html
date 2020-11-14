@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
+  <body>
+    <header id="jumbo-adjusted" class="jumbotron">
+      <h1 id="page-heading" class="">Work Day Scheduler</h1>
+      <p id="page-subheading" class="lead">A simple calendar app for scheduling your work day</p>
+      <div id="currentDay" class="lead"></div>
+    </header>
+    <div class="container">
+      <!-- Timeblocks go here -->
+
+      <div class="row hour-block" id="nine">
+        <div class="col hour-label"> 9am </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+
+      <div class="row hour-block" id="ten">
+        <div class="col hour-label"> 10am </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+
+      <div class="row hour-block" id="eleven">
+        <div class="col hour-label"> 11am </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+        
+      <div class="row hour-block" id="twelve">
+        <div class="col hour-label"> 12pm </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+        
+      <div class="row hour-block" id="one">
+        <div class="col hour-label"> 1pm </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+        
+      <div class="row hour-block" id="two">
+        <div class="col hour-label"> 2pm </div>
+        <div class="col appt"> --  </div>
+        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      </div>
+        
+      <div class="row hour-block" id="three">
+        <div class="col hour-label"> 3pm </div>
+      <div class="col appt"> --  </div>
+      <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+    </div>
+      
+      <div class="row hour-block" id="four">
+        <div class="col hour-label"> 4pm </div>
+        <div class="col appt"> --  </div>
+      </div>
+
+        
+      <div class="row hour-block" id="five">
+        <div class="col hour-label"> 5pm </div>
+        <div class="col appt"> --  </div>
+      </div>
+
+        
+
+    </div> <!-- end container div-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  </body>
+</html>
