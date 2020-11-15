@@ -30,60 +30,61 @@
       <p id="page-subheading" class="lead">A simple calendar app for scheduling your work day</p>
       <div id="currentDay" class="lead"></div>
     </header>
-    <div class="container">
+    <div id="schedule-container"class="container">
       <!-- Timeblocks go here -->
 
-      <div class="row hour-block" id="nine">
+        <!-- data elements might not be needed:   data-hour="9"    --> 
+      <div class="row hour-block"  id="9">
         <div class="col hour-label"> 9am </div>
-        <div class="col appt"> --  </div>
+        <div data-hour="9" class="col  appt"> --  </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
 
-      <div class="row hour-block" id="ten">
+      <div class="row hour-block" id="10">
         <div class="col hour-label"> 10am </div>
-        <div class="col appt"> --  </div>
+        <div data-hour="10" class="col appt"> --  </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
 
-      <div class="row hour-block" id="eleven">
+      <div class="row hour-block" id="11">
         <div class="col hour-label"> 11am </div>
-        <div class="col appt"> --  </div>
+        <div data-hour="11" id="appt11"  class="col appt"> --  </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="twelve">
+      <div class="row hour-block" id="12">
         <div class="col hour-label"> 12pm </div>
-        <div class="col appt"> --  </div>
+        <div data-hour="12" class="col appt"> -- </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="one">
+      <div class="row hour-block" id="13">
         <div class="col hour-label"> 1pm </div>
-        <div class="col appt"> --  </div>
+        <div  data-hour="13" class="col appt"> --  </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="two">
+      <div class="row hour-block" id="14">
         <div class="col hour-label"> 2pm </div>
-        <div class="col appt"> --  </div>
+        <div  data-hour="14" class="col appt"> --  </div>
         <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="three">
+      <div class="row hour-block" id="15">
         <div class="col hour-label"> 3pm </div>
-      <div class="col appt"> --  </div>
+      <div  data-hour="15" class="col appt"> --  </div>
       <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
     </div>
       
-      <div class="row hour-block" id="four">
-        <div class="col hour-label"> 4pm </div>
+      <div class="row hour-block" id="16">
+        <div data-hour="16" class="col hour-label"> 4pm </div>
         <div class="col appt"> --  </div>
       </div>
 
         
-      <div class="row hour-block" id="five">
+      <div class="row hour-block" id="17">
         <div class="col hour-label"> 5pm </div>
-        <div class="col appt"> --  </div>
+        <div data-hour="17"  class="col appt"> --  </div>
       </div>
 
         
