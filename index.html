@@ -25,70 +25,71 @@
     <title>Work Day Scheduler</title>
   </head>
   <body>
+
     <header id="jumbo-adjusted" class="jumbotron">
       <h1 id="page-heading" class="">Work Day Scheduler</h1>
       <p id="page-subheading" class="lead">A simple calendar app for scheduling your work day</p>
       <div id="currentDay" class="lead"></div>
     </header>
     <div id="schedule-container"class="container">
-      <!-- Timeblocks go here -->
+    <form>
 
-        <!-- data elements might not be needed:   data-hour="9"    --> 
-      <div class="row hour-block"  id="9">
+      <div class="row hour-block" data-hour="9" id="9">
         <div class="col hour-label"> 9am </div>
-        <div data-hour="9" class="col  appt"> --  </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div data-hour="9" class="col  text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
 
-      <div class="row hour-block" id="10">
+      <div class="row hour-block" data-hour="10" id="10">
         <div class="col hour-label"> 10am </div>
-        <div data-hour="10" class="col appt"> --  </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div data-hour="10" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
 
-      <div class="row hour-block" id="11">
+      <div class="row hour-block" data-hour="11" id="11">
         <div class="col hour-label"> 11am </div>
-        <div data-hour="11" id="appt11"  class="col appt"> --  </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div data-hour="11" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="12">
+      <div class="row hour-block" data-hour="12" id="12">
         <div class="col hour-label"> 12pm </div>
-        <div data-hour="12" class="col appt"> -- </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div data-hour="12" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="13">
+      <div class="row hour-block" data-hour="13" id="13">
         <div class="col hour-label"> 1pm </div>
-        <div  data-hour="13" class="col appt"> --  </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div  data-hour="13" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="14">
+      <div class="row hour-block" data-hour="14" id="14">
         <div class="col hour-label"> 2pm </div>
-        <div  data-hour="14" class="col appt"> --  </div>
-        <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+        <div  data-hour="14" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
         
-      <div class="row hour-block" id="15">
+      <div class="row hour-block" data-hour="15" id="15">
         <div class="col hour-label"> 3pm </div>
-      <div  data-hour="15" class="col appt"> --  </div>
-      <div class="col btn-col inactive"><button class="btn btn-success disabled">save</button>  </div>
+      <div  data-hour="15" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+      <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
     </div>
       
-      <div class="row hour-block" id="16">
-        <div data-hour="16" class="col hour-label"> 4pm </div>
-        <div class="col appt"> --  </div>
+      <div class="row hour-block" data-hour="16" id="16">
+        <div class="col hour-label"> 4pm </div>
+        <div data-hour="16" class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
 
         
-      <div class="row hour-block" id="17">
+      <div class="row hour-block" data-hour="17" id="17">
         <div class="col hour-label"> 5pm </div>
-        <div data-hour="17"  class="col appt"> --  </div>
+        <div data-hour="17"  class="col text-edit-div"> <textarea class="d-none textarea-el"> </textarea> </div>
+        <div class="col btn-col d-none"><button class="btn btn-success">save</button>  </div>
       </div>
-
         
-
+    <form>
     </div> <!-- end container div-->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

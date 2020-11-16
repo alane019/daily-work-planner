@@ -1,6 +1,22 @@
 body{
   background-color: rgb(223, 223, 223);
 }
+
+textarea{
+background-color: rgb(89 180 117 / 27%);
+border-radius: 4px;
+border: gray solid 1.5px;
+margin: 1px 4px;
+resize: none; 
+overflow: auto;
+max-width: initial;
+border: gray solid 1px;
+padding: 10px;
+position: relative;
+/*left: 15%; */
+width: 100%;
+}
+
 .hour-block{
   border: rgba(27, 26, 26, 0.952) solid 0.5px;
   background-color: rgba(185, 185, 185, 0.486);
@@ -31,8 +47,14 @@ body{
 }
 
 .appt{
-  text-align: center;
-  padding: 8px;
+  /*text-align: center; */
+  padding: 25px 15px;
+
+}
+.appt textarea{
+  /*text-align: center; */
+  padding: 5px;
+
 }
 #page-heading{
   font-size: large;
@@ -58,25 +80,12 @@ body{
   margin-bottom: 1.5px;
 }
 
-.inactive{
-display: none;
-}
-
 /* =========================== */
 
 body {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
-}
-
-textarea{
-  background: transparent;
-  border: none;
-  resize: none;
-  color: #000000;
-  border-left: 1px solid black;
-  padding: 10px;
 }
 
 .jumbotron {
@@ -86,7 +95,7 @@ textarea{
   border-bottom: 2px solid black;
   font-size: medium !important;
   background-color: black;
-}
+} 
 
 .description{
   white-space: pre-wrap;
@@ -99,7 +108,7 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
+  height: 100px;
   border-top: 1px solid white;;
 }
 
