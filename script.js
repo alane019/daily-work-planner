@@ -65,7 +65,7 @@ window.onload = function(){
          //renderScheduleDisplay function will be called at the end of the save button click handler to reinitialize page.
 
    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+   
     /* -------------------------------------------------------------------------------------- */
    //Click handler for main schedule container div   
    scheduleContainer.addEventListener("click", function(event) {
@@ -121,8 +121,8 @@ window.onload = function(){
          //save textarea value to local storage
          localStorage.setItem(`text-${hour}`, textAreaTextValue);
          let justSaved = localStorage.getItem(`text-${hour}`);  cl(` justSaved  -- "text-\${hour}": --  text-${hour}`);
- 
-         window.alert("Notes for this hour saved as: " + justSaved);
+               //log saved text value to the console   
+               cl("Notes for this hour saved as: " + justSaved);
 
          // Reset edit-mode indicator AND classes to d-none the save button AND textarea container
          // div text edit is no longer in progress; other appointment divs are reponsive to clicks once again.
@@ -135,6 +135,6 @@ window.onload = function(){
          renderScheduleDisplay();
       }  // end-else-if (target matches button)
 
-   });  //end of click handler event handler on container div.
+   });  //end of click handler for container div.
 
 } //end window onload 
