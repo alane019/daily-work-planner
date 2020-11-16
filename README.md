@@ -1,6 +1,6 @@
 # Daily work planner
 
-Demo is viewable here: <https://alane019.github.io/timed-javascript-quiz/>
+Demo is viewable here: <https://alane019.github.io/daily-work-planner/>
 
 ## Description 
 
@@ -8,7 +8,7 @@ This is a daily planner that allows you two select each hourly block and add an 
 
 ## Table of Contents
 
-  - [Daily work planner](#Timed-javascript-quiz)
+  - [Daily work planner](#Daily-work-planner)
   - [Description](#description)
   - [Table of Contents](#table-of-contents)
   - [Examples](#examples)
@@ -16,7 +16,7 @@ This is a daily planner that allows you two select each hourly block and add an 
   - [License](#license) 
 
 ## Examples
-Demo is viewable here: <https://alane019.github.io/timed-javascript-quiz/>
+Demo is viewable here: <https://alane019.github.io/daily-work-planner/>
 
 
 ## Screenshots

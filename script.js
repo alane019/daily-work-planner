@@ -1,58 +1,70 @@
 window.onload = function(){
 
-
    //globals: flag and other status indicators - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  
    var editInProgress = false;
-
-
    // globals: dom element variables and any shorhand functions - - - - - - - - - - - - - - - - - - - - - 
-   let docu = document;
-   let scheduleContainer =  docu.getElementById("schedule-container");
-   //let hourBlocks = Array.from(document.querySelectorAll(".hour-block"));
-   let btnCols = Array.from(document.querySelectorAll(".btn-col"));
-   let hourTextEditDivs = Array.from(document.querySelectorAll(".text-edit-div"));
-   let textAreaElements = Array.from(document.querySelectorAll(".textarea-el"));
+   var docu = document;
+   var scheduleContainer =  docu.getElementById("schedule-container");
+
+   var todaysDate;
+   var currentDayDiv;
+   var currentHour;
+   var btnCols;
+   var hourTextEditDivs;
+
    // console.log shorthand - - - - - - - 
    let cl = function(str1, str2 ="", str3 ="", str4 ="", str5=""){
       str = str1 + str2 + str3 + str4 + str5; 
       console.log(str);
    }  // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+         // a.) initialize/reinitialize momentjs values, update dom query arrays.
+          let renderScheduleDisplay = function(){
+            btnCols = Array.from(document.querySelectorAll(".btn-col"));
+            hourTextEditDivs = Array.from(document.querySelectorAll(".text-edit-div"));
+           
+            // MomentJs is used to update page heading and apply formatting to hour-divs on schedule - - - -
+            // Add current date to page header (Moment format 'MMMM Do YYYY' example: "November 15th 2020")
+            todaysDate = new moment(); 
+            todaysDate = todaysDate.format('MMMM Do YYYY');
+            currentDayDiv = docu.querySelector("#currentDay");
+            currentDayDiv.textContent = todaysDate;
 
+            hourTextEditDivs.forEach(function(displayDiv){
+               let hour = displayDiv.getAttribute('data-hour');  
+               //update html with local storage values as needed
+               let savedInLocalStorage = localStorage.getItem(`text-${hour}`);    /* console log: */  cl(`Saved in local storage for ${hour}th hour block: ${savedInLocalStorage}`);
+               if(String(savedInLocalStorage) == 'null') { 
+                  savedInLocalStorage = "";
+               }
+               if(String(savedInLocalStorage) != "");
+               displayDiv.innerHTML = savedInLocalStorage +  ' <textarea class="d-none textarea-el"> </textarea>';
+               console.log(" --------------- ");
 
-
-
-
-   // MomentJs is used to update page heading and apply formatting to hour-divs on schedule - - - - - - - - 
-   // Add current date to page header (Moment format 'MMMM Do YYYY' example: "November 15th 2020")
-   let todaysDate = new moment(); 
-   todaysDate = todaysDate.format('MMMM Do YYYY');
-   let currentDayDiv = docu.querySelector("#currentDay");
-   currentDayDiv.textContent = todaysDate;
-          // TODO: MomentJS formatting:                           
-                 // .past, .present, .future
-
-
-
-
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-         //TODO: localStorage:
-         //TODO:  a.) get @ pageload
-         //TODO:  b.) [textArea element]
-
-         // a.) get localStorage values and write to divs at page load time
-           hourTextEditDivs.forEach(function(displayDiv){
-            let hour = displayDiv.getAttribute('data-hour');     /* console log: */  cl("hour checked for local storage: ", hour);
-            let savedInLocalStorage = localStorage.getItem(`text-${hour}`);    /* console log: */  cl(`Saved in local storage for ${hour}th hour block: ${savedInLocalStorage}`);
-            if(String(savedInLocalStorage) != "")
-            displayDiv.innerHTML = savedInLocalStorage +  ' <textarea class="d-none textarea-el"> </textarea>';
-            console.log(" --------------- \n --------------- ")
-           });
-
-           // updating this array value with a new dom query after updates to innerHTML properties (not sure if needed)
+               //moment js hour format is used to conditionally apply styles to each hour-block on schedule. 
+               currentHour = moment().format("[Current hour: ] H");
+               if(hour < currentHour){
+                  displayDiv.classList.add("past");
+               }
+               else if(hour > currentHour){
+                  displayDiv.classList.add("future");
+               }
+               else if(hour == currentHour){
+                  displayDiv.classList.add("present");
+               }
+               else{ 
+                  cl(`currentHour: ${currentHour}`); 
+                  cl(`Hour data attribute value for current div in forEach: ${hour}`);
+               }
+            }); // end of forEach
+          // declaring text area area after the render loop to avoid 
            textAreaElements = Array.from(document.querySelectorAll(".textarea-el"));
-   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+         }
+         //this runs renderScheduleDisplay() when the page loads.
+         renderScheduleDisplay();
+         //renderScheduleDisplay function will be called at the end of the save button click handler to reinitialize page.
 
+   // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     /* -------------------------------------------------------------------------------------- */
    //Click handler for main schedule container div   
@@ -77,11 +89,6 @@ window.onload = function(){
          buttonColumn.classList.remove("d-none");
          textAreaElements[index].classList.remove("d-none");
 
-         //TODO: Check CSS (and other files) to see if/when "edit" class is used.
-         eventTargetDiv.classList.add("edit");    /* console log: button col classlist */  cl(eventTargetDiv.classList);
- 
-                  /* log: button col classlist */  cl(buttonColumn.classList);
-
       } //endif (if the editable textarea-div for each work hour is clicked) - - - - - - - - - 
        // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -98,7 +105,7 @@ window.onload = function(){
 
          //get event targets array index value using... id of hour-block row (should use an element data attribute)
          let hour = etBtn.parentElement.parentElement.id;    cl("hour is: ", hour);
-         let index = hour - hourTextEditDivs.length;                               cl("index is: ", index);
+         let index = hour - hourTextEditDivs.length;                    cl("index is: ", index);
 
          let textAreaTextValue = textAreaElements[index].value;
                cl("textAreaTextValue: ", textAreaTextValue);
@@ -109,20 +116,25 @@ window.onload = function(){
          }
 
          //write text area text to parent div for viewing purposes only.
-         hourTextEditDivs[index].textContent = textAreaTextValue;
+         hourTextEditDivs[index].innerHTML = `${textAreaTextValue} <textarea class="d-none textarea-el"> </textarea>`;
    
          //save textarea value to local storage
          localStorage.setItem(`text-${hour}`, textAreaTextValue);
-         let justSaved = localStorage.getItem(`text-${hour}`);  cl(`"text-\${hour}": text-${hour}`);
+         let justSaved = localStorage.getItem(`text-${hour}`);  cl(` justSaved  -- "text-\${hour}": --  text-${hour}`);
  
          window.alert("Notes for this hour saved as: " + justSaved);
 
          // Reset edit-mode indicator AND classes to d-none the save button AND textarea container
-         // appointment edit is no longer in progress; other appointment divs are reponsive to clicks once again.
-         editInProgress = false; //this should update the global 
+         // div text edit is no longer in progress; other appointment divs are reponsive to clicks once again.
+         editInProgress = false; //this should update the global (needed to be declared as false with var instead of let)
+
          textAreaElements[index].classList.add("d-none");
+
+         // adds display-none to div that contains the save button
          etBtn.parentElement.classList.add("d-none");
-      }  // end-else-if 
+         renderScheduleDisplay();
+      }  // end-else-if (target matches button)
+
    });  //end of click handler event handler on container div.
 
-} //end window onload block
+} //end window onload 
