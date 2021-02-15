@@ -11,6 +11,7 @@ window.onload = function(){
    var currentHour;
    var btnCols;
    var hourTextEditDivs;
+   var hour; 
 
    // console.log shorthand - - - - - - - 
    let cl = function(str1, str2 ="", str3 ="", str4 ="", str5=""){
@@ -31,7 +32,8 @@ window.onload = function(){
             currentDayDiv.textContent = todaysDate;
 
             hourTextEditDivs.forEach(function(displayDiv){
-               let hour = displayDiv.getAttribute('data-hour');  
+               hour = displayDiv.getAttribute('data-hour');  
+               hour = parseInt(hour);
                //update html with local storage values as needed
                let savedInLocalStorage = localStorage.getItem(`text-${hour}`);    /* console log: */  cl(`Saved in local storage for ${hour}th hour block: ${savedInLocalStorage}`);
                if(String(savedInLocalStorage) == 'null') { 
@@ -42,14 +44,27 @@ window.onload = function(){
                console.log(" --------------- ");
 
                //moment js hour format is used to conditionally apply styles to each hour-block on schedule. 
-               currentHour = moment().format("[Current hour: ] H");
+               currentHour = moment().format("H");  
+               
+               //set testHour to true to test an specific hour of the day. 
+               let testHour = false; 
+               if(testHour){
+                  currentHour = moment().add(11, 'hours').format("H");  
+               }
+                       
+               
+               // test number result
+               console.log(`Test:   ${hour} (hour) - ${currentHour} (currentHour) = ... `)
+               let answer = hour - currentHour; 
+               console.log(answer);
                if(hour < currentHour){
                   displayDiv.classList.add("past");
+                  console.log(">>>     displayDiv.classList.add('PAST'); ");
                }
-               else if(hour > currentHour){
+                if(hour > currentHour){
                   displayDiv.classList.add("future");
                }
-               else if(hour == currentHour){
+                if(hour == currentHour){
                   displayDiv.classList.add("present");
                }
                else{ 
