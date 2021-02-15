@@ -19,7 +19,7 @@ width: 100%;
 
 .hour-block{
   border: rgba(27, 26, 26, 0.952) solid 0.5px;
-  background-color: rgba(185, 185, 185, 0.486);
+  background-color: rgba(185, 185, 185, 0.205);
   
 }
 
@@ -118,19 +118,20 @@ body {
   border-top: 1px dashed #000000;
 }
 
-.past textarea {
-  background-color: #e7e4e4;
+.past  {
+  background-color: #a7a7a77e;
   color: rgb(10, 10, 10);
 }
 
-.present textarea{
-  background-color: #e9b28b;
+.present {
+  background-color: #eea6474b;
   color: rgb(10, 10, 10);
 }
 
-.future textarea {
-  background-color: #96e796;
-  color: white;
+.future  {
+  background-color: #96e79644;
+  color: rgb(21, 41, 15);
+  backdrop-filter: opacity(.24) hue-rotate(40deg);
 }
 
 .saveBtn {
@@ -144,4 +145,10 @@ body {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all .3s ease-in-out;
+}
+
+form{
+  
+  background: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/white_brick_wall.png);
+  background: url(http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png);
 }
