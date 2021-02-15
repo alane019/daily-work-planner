@@ -118,18 +118,18 @@ body {
   border-top: 1px dashed #000000;
 }
 
-.past {
-  background-color: #d3d3d3;
+.past textarea {
+  background-color: #e7e4e4;
   color: rgb(10, 10, 10);
 }
 
-.present {
-  background-color: #ff6961;
+.present textarea{
+  background-color: #e9b28b;
   color: rgb(10, 10, 10);
 }
 
-.future {
-  background-color: #77dd77;
+.future textarea {
+  background-color: #96e796;
   color: white;
 }
 
