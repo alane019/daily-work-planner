@@ -20,7 +20,7 @@ Demo is viewable here: <https://alane019.github.io/daily-work-planner/>
 
 
 ## Screenshots
-
+![EXAMPLE-SCREENSHOT](./assets/images/screenshot.jpg)
 ![EXAMPLE-SCREENSHOT](./assets/images/screenshot.jpg)
 
 ## External Resources
